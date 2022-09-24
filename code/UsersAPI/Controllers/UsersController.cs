@@ -17,5 +17,12 @@ namespace UsersAPI.Controllers
 
       return Ok(datetime);
     }
+
+    [HttpGet("Show/{name}")]
+    public IActionResult ShowName(string name)
+    {
+      var message = $"Hello, {name} , welcome!";
+      return Ok(new { message });
+    }
   }
 }
