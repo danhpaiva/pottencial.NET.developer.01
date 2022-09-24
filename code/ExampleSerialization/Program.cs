@@ -14,4 +14,12 @@ string dadoSerializado = JsonConvert.SerializeObject(listaVendas, Formatting.Ind
 File.WriteAllText("Files/vendas.json", dadoSerializado);
 
 Console.WriteLine(dadoSerializado);
+
+List<Venda> dadoDeserializado = JsonConvert.DeserializeObject<List<Venda>>(dadoSerializado);
+
+foreach (var item in dadoDeserializado)
+{
+  Console.WriteLine($"\nProduto: {item.Produto}");
+}
+
 Console.ReadLine();
