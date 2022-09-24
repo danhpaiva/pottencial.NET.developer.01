@@ -15,7 +15,7 @@ File.WriteAllText("Files/vendas.json", dadoSerializado);
 
 Console.WriteLine(dadoSerializado);
 
-List<Venda> dadoDeserializado = JsonConvert.DeserializeObject<List<Venda>>(dadoSerializado);
+List<Venda> dadoDeserializado = JsonConvert.DeserializeObject<List<Venda>>(dadoSerializado)!;
 
 foreach (var item in dadoDeserializado)
 {
