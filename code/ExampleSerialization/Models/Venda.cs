@@ -5,12 +5,14 @@ namespace ExampleSerialization.Models
     public int Id { get; set; }
     public string Produto { get; set; }
     public decimal Preco { get; set; }
+    public DateTime DataVenda { get; set; }
 
-    public Venda(int Id, string Produto, decimal Preco)
+    public Venda(int Id, string Produto, decimal Preco, DateTime dataVenda)
     {
       this.Id = Id;
       this.Produto = Produto;
       this.Preco = Preco;
+      DataVenda = dataVenda;
     }
   }
 }

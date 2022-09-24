@@ -1,5 +1,14 @@
-{
-  "Id": 1,
-  "Produto": "Caneta",
-  "Preco": 1.50
-}
+[
+  {
+    "Id": 1,
+    "Produto": "Caneta",
+    "Preco": 1.50,
+    "DataVenda": "2022-09-24T16:29:35.6989759-03:00"
+  },
+  {
+    "Id": 2,
+    "Produto": "Office",
+    "Preco": 100.00,
+    "DataVenda": "2022-09-24T16:29:35.7052332-03:00"
+  }
+]
