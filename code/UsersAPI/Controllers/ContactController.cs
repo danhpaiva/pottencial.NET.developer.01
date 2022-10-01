@@ -52,5 +52,17 @@ namespace UsersAPI.Controllers
 
             return Ok(contactDatabase);
         }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var contactDatabase = _context.Contacts.Find(id);
+
+            if (contactDatabase == null) return NotFound();
+
+            _context.Contacts.Remove(contactDatabase);
+            _context.SaveChanges();
+            return NoContent();
+        }
     }
 }
