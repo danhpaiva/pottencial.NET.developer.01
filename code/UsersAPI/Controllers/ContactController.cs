@@ -36,6 +36,15 @@ namespace UsersAPI.Controllers
             return Ok(contact);
         }
 
+        [HttpGet("GetByName")]
+        public IActionResult GetByName(string name)
+        {
+            var contacts = _context.Contacts.Where(x => x.Name.Contains(name));
+
+            if (contacts.Count() == 0) return NotFound("Sem contatos com esse nome");
+            return Ok(contacts);
+        }
+
         [HttpPut("{id}")]
         public IActionResult Update(int id, Contact contact)
         {
