@@ -35,5 +35,22 @@ namespace UsersAPI.Controllers
             if (contact == null) return NotFound();
             return Ok(contact);
         }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Contact contact)
+        {
+            var contactDatabase = _context.Contacts.Find(id);
+
+            if (contactDatabase == null) return NotFound();
+
+            contactDatabase.Name = contact.Name;
+            contactDatabase.Phone = contact.Phone;
+            contactDatabase.Active = contact.Active;
+
+            _context.Contacts.Update(contactDatabase);
+            _context.SaveChanges();
+
+            return Ok(contactDatabase);
+        }
     }
 }
