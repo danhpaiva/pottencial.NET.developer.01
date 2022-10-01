@@ -23,7 +23,7 @@ namespace UsersAPI.Controllers
             {
                 _context.Add(contact);
                 _context.SaveChanges();
-                return Ok(contact);
+                return CreatedAtAction(nameof(GetById), new { id = contact.Id }, contact);
             }
         }
 
